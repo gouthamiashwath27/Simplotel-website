@@ -83,7 +83,19 @@
       min-height: 90vh;
     }
 
+    /* 👇 Added this to swap position */
+    .image-section {
+      order: 1;
+      flex: 1;
+      min-width: 300px;
+      min-height: 50vh;
+      background-image: url("image4.jpg");
+      background-size: cover;
+      background-position: center;
+    }
+
     .text-section {
+      order: 2;
       flex: 1;
       min-width: 300px;
       background: linear-gradient(to right, #f9f1a5, #ffced5);
@@ -125,15 +137,6 @@
 
     .btn:hover {
       background-color: #ff5252;
-    }
-
-    .image-section {
-      flex: 1;
-      min-width: 300px;
-      min-height: 50vh;
-      background-image: url("image4.jpg");
-      background-size: cover;
-      background-position: center;
     }
 
     /* Gallery Section */
@@ -269,14 +272,15 @@
         flex-direction: column;
       }
 
-      .text-section {
-        order: 2;
-        padding: 40px 20px;
-      }
-
+      /* On mobile, keep image on top, text below */
       .image-section {
         order: 1;
         min-height: 40vh;
+      }
+
+      .text-section {
+        order: 2;
+        padding: 40px 20px;
       }
 
       .gallery {
@@ -362,15 +366,16 @@
         <li><a href="#restaurant">Restaurant</a></li>
         <li><a href="#testimonials">Testimonials</a></li>
         <li><a href="#contact">Contact Us</a></li>
-          <li><a href=""><span class="material-symbols-outlined">
-menu
-</span></a></li>
+        <li><a href=""><span class="material-symbols-outlined">menu</span></a></li>
       </ul>
     </div>
   </header>
 
   <!-- Hero Section -->
   <section class="hero" id="home">
+    <!-- 👇 Image comes first -->
+    <div class="image-section"></div>
+    <!-- 👇 Text comes second -->
     <div class="text-section">
       <div class="text-content">
         <h1>LOREM IPSUM</h1>
@@ -378,7 +383,6 @@ menu
         <button class="btn">Click Me</button>
       </div>
     </div>
-    <div class="image-section"></div>
   </section>
 
   <!-- Gallery Section -->
@@ -404,4 +408,3 @@ menu
   </section>
 </body>
 </html>
-
